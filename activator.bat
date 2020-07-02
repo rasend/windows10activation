@@ -17,8 +17,6 @@ Set s=2F77B-TNFGY-69QQF-B8YKP-D69TJ
 Set d=DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ  
 Set f=QFFDN-GRT3P-VKWWX-X7T3R-8B639
 
-
-
 echo Выберите ваше издание Windows 10
 echo  1)  Home/Core
 echo  2)  Home/Core (Country Specific)
