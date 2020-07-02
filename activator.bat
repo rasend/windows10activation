@@ -1,7 +1,7 @@
 @echo off
 @chcp 1251
 
-
+setlocal EnableExtensions EnableDelayedExpansion
 Set q=TX9XD-98N7V-6WMQ6-BX7FG-H8Q99        
 Set w=PVMJN-6DFY6-9CCP6-7BKTT-D3WVR  
 Set e=7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH  
@@ -36,102 +36,31 @@ echo  13) Enterprise 2016 LTSB
 echo  14) Enterprise 2016 LTSB N
 Set /P win="Укажите цифру: "
 
-if (%win%)==(1) goto Home
-if (%win%)==(2) goto Homecs
-if (%win%)==(3) goto Homesl
-if (%win%)==(4) goto Homen
-if (%win%)==(5) goto Professional
-if (%win%)==(6) goto Professionaln
-if (%win%)==(7) goto Enterprise
-if (%win%)==(8) goto Enterprisen
-if (%win%)==(9) goto Education
-if (%win%)==(10) goto Educationn
-if (%win%)==(11) goto Enterprise15
-if (%win%)==(12) goto Enterprise15n
-if (%win%)==(13) goto Enterprise16
-if (%win%)==(14) goto Enterprise16n
+if (%win%)==(1) call :activ %q% 
+if (%win%)==(2) call :activ %w% 
+if (%win%)==(3) call :activ %e% 
+if (%win%)==(4) call :activ %r% 
+if (%win%)==(5) call :activ %t% 
+if (%win%)==(6) call :activ %y% 
+if (%win%)==(7) call :activ %u% 
+if (%win%)==(8) call :activ %i% 
+if (%win%)==(9) call :activ %o% 
+if (%win%)==(10) call :activ %p% 
+if (%win%)==(11) call :activ %a% 
+if (%win%)==(12) call :activ %s% 
+if (%win%)==(13) call :activ %d% 
+if (%win%)==(14) call :activ %f% 
 
-:Home
- cscript slmgr.vbs /ipk %q%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
-:Homecs
- cscript slmgr.vbs /ipk %w%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
-:Homesl
- cscript slmgr.vbs /ipk %e%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Homen
- cscript slmgr.vbs /ipk %r%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Professional
- cscript slmgr.vbs /ipk %t%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
-:Professionaln
- cscript slmgr.vbs /ipk %y%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
-:Enterprise
- cscript slmgr.vbs /ipk %u%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
-:Enterprisen
- cscript slmgr.vbs /ipk %i%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Education
- cscript slmgr.vbs /ipk %o%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
-:Educationn
- cscript slmgr.vbs /ipk %p%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Enterprise15
- cscript slmgr.vbs /ipk %a%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Enterprise15n
- cscript slmgr.vbs /ipk %s%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Enterprise16
- cscript slmgr.vbs /ipk %d%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b 
-:Enterprise16n
- cscript slmgr.vbs /ipk %f%
- cscript slmgr.vbs /skms kms.lotro.cc
- cscript slmgr.vbs /ato
-pause
-exit/b
+call :activ %t% 
+
+:activ<key>
+cscript slmgr.vbs /ipk %1
+cls
+cscript slmgr.vbs /skms kms.lotro.cc
+cls
+For /F "Delims=" %%I In ('slmgr.vbs -ato') Do Set V=%%~I
+cls
+Echo !V!
+exit
+goto :eof
+
