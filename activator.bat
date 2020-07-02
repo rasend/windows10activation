@@ -58,9 +58,9 @@ cscript slmgr.vbs /ipk %1
 cls
 cscript slmgr.vbs /skms kms.lotro.cc
 cls
-For /F "Delims=" %%I In ('slmgr.vbs -ato') Do Set V=%%~I
+For /F "qqq=" %%I In ('slmgr.vbs -ato') Do Set w=%%~I
 cls
-Echo !V!
+Echo !w!
 exit
 goto :eof
 
