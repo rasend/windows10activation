@@ -51,11 +51,8 @@ if (%win%)==(14) call :activ %f%
 
 :activ<key>
 cscript slmgr.vbs /ipk %1
-cls
 cscript slmgr.vbs /skms kms.lotro.cc
-cls
 For /F "Delims=" %%I In ('slmgr.vbs -ato') Do Set V=%%~I
-cls
 Echo !V!
 exit
 goto :eof
